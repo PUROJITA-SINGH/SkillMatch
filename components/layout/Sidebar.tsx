@@ -1,4 +1,5 @@
 
+
 import React, { useContext } from 'react';
 import { AuthContext } from '../../contexts/AuthContext';
 import { ICONS } from '../../constants';
@@ -48,6 +49,18 @@ const Sidebar: React.FC<SidebarProps> = ({ currentView, setView }) => {
           label="Job Matcher"
           isActive={currentView === 'matcher'}
           onClick={() => setView('matcher')}
+        />
+        <NavLink
+          icon={ICONS.RESUME_TAILOR}
+          label="Resume Tailor"
+          isActive={currentView === 'resume-tailor'}
+          onClick={() => setView('resume-tailor')}
+        />
+        <NavLink
+          icon={ICONS.MARKET_ANALYSIS}
+          label="Market Analysis"
+          isActive={currentView === 'market-analysis'}
+          onClick={() => setView('market-analysis')}
         />
       </nav>
       <div className="mt-auto">

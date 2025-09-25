@@ -1,11 +1,14 @@
 
+
 import React, { useState } from 'react';
 import Sidebar from './Sidebar';
 import Dashboard from '../dashboard/Dashboard';
 import JobMatcher from '../matcher/JobMatcher';
 import Header from './Header';
+import MarketAnalysis from '../analysis/MarketAnalysis';
+import ResumeTailor from '../tailor/ResumeTailor';
 
-export type MainView = 'dashboard' | 'matcher';
+export type MainView = 'dashboard' | 'matcher' | 'market-analysis' | 'resume-tailor';
 
 const MainApp: React.FC = () => {
   const [currentView, setCurrentView] = useState<MainView>('dashboard');
@@ -16,6 +19,10 @@ const MainApp: React.FC = () => {
         return <Dashboard setView={setCurrentView}/>;
       case 'matcher':
         return <JobMatcher />;
+      case 'market-analysis':
+        return <MarketAnalysis />;
+      case 'resume-tailor':
+        return <ResumeTailor />;
       default:
         return <Dashboard setView={setCurrentView}/>;
     }

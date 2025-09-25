@@ -137,6 +137,22 @@ const MatchResult: React.FC<MatchResultProps> = ({ result }) => {
             </ResultCard>
         </div>
         
+        {result.transferableSkills && result.transferableSkills.length > 0 && (
+            <ResultCard title="Transferable Skills" icon={<svg xmlns="http://www.w3.org/2000/svg" className="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13.828 10.172a4 4 0 00-5.656 0l-4 4a4 4 0 105.656 5.656l1.102-1.101m-.758-4.536a4 4 0 005.656 0l4-4a4 4 0 00-5.656-5.656l-1.1 1.1" /></svg>}>
+                <p className="text-sm text-gray-600 mb-4">
+                    These are valuable skills you possess that can be applied to this role, even if they aren't direct keywords from the job description. Emphasize these in your cover letter and interviews.
+                </p>
+                <ul className="space-y-2">
+                    {result.transferableSkills.map((item, index) => (
+                         <li key={index} className="flex items-start">
+                            <span className="text-indigo-500 mr-3 mt-1">&#10022;</span>
+                            <span className="text-gray-800">{item}</span>
+                        </li>
+                    ))}
+                </ul>
+            </ResultCard>
+        )}
+
         <ResultCard title="Recommended ATS Keywords" icon={<svg xmlns="http://www.w3.org/2000/svg" className="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 7a2 2 0 012 2m4 0a6 6 0 01-7.743 5.743L11 17H9v2H7v2H5v-2H3v-2H1v-4a1 1 0 011-1h4a1 1 0 011 1v4h2v-2h2v-2l1.257-1.257A6 6 0 0115 7z" /></svg>}>
             <div className="flex flex-wrap gap-2">
                 {result.atsKeywords.map((keyword, index) => (
