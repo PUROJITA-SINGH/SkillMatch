@@ -1,0 +1,33 @@
+{
+  "name": "skillmatch",
+  "private": true,
+  "version": "0.0.0",
+  "type": "module",
+  "scripts": {
+    "dev": "concurrently \"npm run auth-server\" \"vite\"",
+    "auth-server": "tsx server/auth-server.ts",
+    "build": "vite build",
+    "preview": "vite preview",
+    "dev:frontend": "vite",
+    "dev:auth": "tsx server/auth-server.ts"
+  },
+  "dependencies": {
+    "react": "^19.1.1",
+    "react-dom": "^19.1.1",
+    "@google/genai": "^1.20.0",
+    "@supabase/supabase-js": "^2.39.0",
+    "better-auth": "^1.0.1",
+    "@better-auth/react": "^1.0.1",
+    "postgres": "^3.4.4",
+    "bcryptjs": "^2.4.3"
+  },
+  "devDependencies": {
+    "@types/node": "^22.14.0",
+    "@vitejs/plugin-react": "^5.0.0",
+    "typescript": "~5.8.2",
+    "vite": "^6.2.0",
+    "@types/bcryptjs": "^2.4.6",
+    "concurrently": "^8.2.2",
+    "tsx": "^4.7.0"
+  }
+}
